@@ -1,0 +1,529 @@
+{
+	"info": {
+		"_postman_id": "f3749bb3-af88-4f9f-a345-4a1c8536b707",
+		"name": "Helper Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Properties",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Gw-Ims-Org-Id",
+						"value": "{{ORG_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json;revision=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/companies/{{companyID}}/properties",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"companies",
+						"{{companyID}}",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ExtensionPackages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// var resp = JSON.parse(responseBody);",
+							"// postman.setEnvironmentVariable(\"companyID\", resp.data[0].id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Gw-Ims-Org-Id",
+						"value": "{{ORG_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json;revision=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/extension_packages",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"extension_packages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Rules",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// var resp = JSON.parse(responseBody);",
+							"",
+							"// resp.data.forEach(function (item, index){",
+							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Gw-Ims-Org-Id",
+						"value": "{{ORG_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json;revision=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/properties/{{propID}}/rules",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"properties",
+						"{{propID}}",
+						"rules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Data Elements",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// var resp = JSON.parse(responseBody);",
+							"",
+							"// resp.data.forEach(function (item, index){",
+							"//     postman.setEnvironmentVariable(\"dataElementID_\"+item.attributes.name, item.id);",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Gw-Ims-Org-Id",
+						"value": "{{ORG_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json;revision=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/properties/{{propID}}/data_elements",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"properties",
+						"{{propID}}",
+						"data_elements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Extensions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// var resp = JSON.parse(responseBody);",
+							"",
+							"// resp.data.forEach(function (item, index){",
+							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Gw-Ims-Org-Id",
+						"value": "{{ORG_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json;revision=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/properties/{{propID}}/extensions",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"properties",
+						"{{propID}}",
+						"extensions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Hosts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// var resp = JSON.parse(responseBody);",
+							"",
+							"// resp.data.forEach(function (item, index){",
+							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Gw-Ims-Org-Id",
+						"value": "{{ORG_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json;revision=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/properties/{{propID}}/hosts",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"properties",
+						"{{propID}}",
+						"hosts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Libraries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// var resp = JSON.parse(responseBody);",
+							"",
+							"// resp.data.forEach(function (item, index){",
+							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Gw-Ims-Org-Id",
+						"value": "{{ORG_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json;revision=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/properties/{{propID}}/libraries",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"properties",
+						"{{propID}}",
+						"libraries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Environments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// var resp = JSON.parse(responseBody);",
+							"",
+							"// resp.data.forEach(function (item, index){",
+							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Gw-Ims-Org-Id",
+						"value": "{{ORG_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json;revision=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/properties/{{propID}}/environments",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"properties",
+						"{{propID}}",
+						"environments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Rule Components",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// var resp = JSON.parse(responseBody);",
+							"",
+							"// resp.data.forEach(function (item, index){",
+							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{CLIENT_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "X-Gw-Ims-Org-Id",
+						"value": "{{ORG_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.api+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.api+json;revision=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/rules/{{ruleID_Target}}/rule_components",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"rules",
+						"{{ruleID_Target}}",
+						"rule_components"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
