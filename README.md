@@ -8,12 +8,10 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Example launch API for target tutorial
-This is an example postman project for using the Adobe Experience Platform Launch API. The example property created is based on the Experience League tutorial: https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/target/overview.html?lang=en.
+# Tag property for Target tutorial using APIs
+This is an postman project to build the tag property created in [Adobe Experience League Target tutorial](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/target/overview.html?lang=en) using the Launch API. This automates the creation of the final launch property for adding target onto an AEM website. 
 
-This automates the creation of the final launch property for adding target onto an AEM website. 
-
-> Note Adobe Experience Platform **Launch** has been rebranded to Adobe Experience Platform **Tags**. These terms may be used interchangably throughout this documentation.
+> Note: Adobe Experience Platform **Launch** has been rebranded to Adobe Experience Platform **Tags**. These terms may be used interchangably throughout this documentation.
 
 Along with the completed API collection, you can checkout  [requests-and-tips.md](requests-and-tips.md) to learn more about each of the requests and their caveats.
 
