@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f3749bb3-af88-4f9f-a345-4a1c8536b707",
+		"_postman_id": "ce25dcdc-6bef-4328-96c8-f3152f4ad6c9",
 		"name": "Helper Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -57,8 +57,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// var resp = JSON.parse(responseBody);",
-							"// postman.setEnvironmentVariable(\"companyID\", resp.data[0].id);"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -112,11 +111,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// var resp = JSON.parse(responseBody);",
-							"",
-							"// resp.data.forEach(function (item, index){",
-							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
-							"// });"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -172,11 +167,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// var resp = JSON.parse(responseBody);",
-							"",
-							"// resp.data.forEach(function (item, index){",
-							"//     postman.setEnvironmentVariable(\"dataElementID_\"+item.attributes.name, item.id);",
-							"// });"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -232,11 +223,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// var resp = JSON.parse(responseBody);",
-							"",
-							"// resp.data.forEach(function (item, index){",
-							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
-							"// });"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -292,11 +279,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// var resp = JSON.parse(responseBody);",
-							"",
-							"// resp.data.forEach(function (item, index){",
-							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
-							"// });"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -352,11 +335,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// var resp = JSON.parse(responseBody);",
-							"",
-							"// resp.data.forEach(function (item, index){",
-							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
-							"// });"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -412,11 +391,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// var resp = JSON.parse(responseBody);",
-							"",
-							"// resp.data.forEach(function (item, index){",
-							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
-							"// });"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -472,11 +447,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// var resp = JSON.parse(responseBody);",
-							"",
-							"// resp.data.forEach(function (item, index){",
-							"//     postman.setEnvironmentVariable(\"ruleID_\"+item.attributes.name, item.id);",
-							"// });"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -524,6 +495,36 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "propID",
+			"value": "PRcbf1c2f6315a4c7482bc88f105f36803"
+		},
+		{
+			"key": "ruleID_Target",
+			"value": "RL487984c9522d48d9a8749bac4f849dd5"
 		}
 	]
 }
