@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "e1c4b6cb-7ae3-4229-8fbb-a8eeb94023a7",
-		"name": "AEM/Target Launch property",
+		"_postman_id": "7449c278-f56a-4c02-9e10-accd6062686e",
+		"name": "Tag property for Target tutorial using APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
