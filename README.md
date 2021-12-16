@@ -15,6 +15,8 @@ This automates the creation of the final launch property for adding target onto 
 
 > Note Adobe Experience Platform **Launch** has been rebranded to Adobe Experience Platform **Tags**. These terms may be used interchangably throughout this documentation.
 
+Along with the completed API collection, you can checkout  [requests-and-tips.md](requests-and-tips.md) to learn more about each of the requests and their caveats.
+
 
 
 ## Prerequisites
