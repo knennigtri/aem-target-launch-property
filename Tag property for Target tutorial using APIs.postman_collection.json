@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "7449c278-f56a-4c02-9e10-accd6062686e",
+		"_postman_id": "e47d24d6-f103-42eb-bb8d-a1bcb1c72e64",
 		"name": "Tag property for Target tutorial using APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Adobe IO Token (Read only)",
+			"name": "Adobe IO Token (READONLY)",
 			"item": [
 				{
 					"name": "INIT: Load Crypto Library for RS256",
@@ -165,7 +165,7 @@
 			]
 		},
 		{
-			"name": "Create Property",
+			"name": "Create Property (READYONLY)",
 			"item": [
 				{
 					"name": "Get Company",
@@ -247,7 +247,7 @@
 									"",
 									"pm.collectionVariables.set(evKey, evValue);",
 									"",
-									"pm.test(\"Status code is 201\", function () {",
+									"pm.test(pm.variables.get(\"propName\") + \" Property Created\", function () {",
 									"  pm.response.to.have.status(201);",
 									"  pm.expect(evValue).to.be.not.empty;",
 									"});"
@@ -259,13 +259,26 @@
 							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"var current = postman.getEnvironmentVariable(\"PROPERTY_COUNT\");",
-									"if(current === undefined){",
-									"  current = '0';",
-									"}",
-									"var count = parseInt(current) + 1;",
-									"// postman.setEnvironmentVariable(\"PROPERTY_NAME\", \"Super Awesome Property - \" + count);",
-									"postman.setEnvironmentVariable(\"PROPERTY_COUNT\", count);"
+									"var now = new Date(Date.now());",
+									"postman.setEnvironmentVariable(\"PROPERTY_UID\", now.toISOString());",
+									"",
+									"// var current = postman.getEnvironmentVariable(\"NAME_Index\");",
+									"// if(current === undefined || current == -1){",
+									"//   current = 1;",
+									"// }",
+									"// else {",
+									"//     current = parseInt(current) + 1;",
+									"// }",
+									"",
+									"// var propName = pm.iterationData.get(\"property_name\"+current);",
+									"// if(propName === undefined && current != 1){",
+									"//     postman.setEnvironmentVariable(\"propName\", \"No property_name\"+current+\" given in runner.data-file.json\");",
+									"//     current = -1;",
+									"// } else {",
+									"//     postman.setEnvironmentVariable(\"propName\", propName);",
+									"// }",
+									"",
+									"// postman.setEnvironmentVariable(\"NAME_Index\", current);"
 								],
 								"type": "text/javascript"
 							}
@@ -302,7 +315,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"Launch with Target {{PROPERTY_COUNT}}\",\n      \"domains\": [\n        \"example.com\"\n      ],\n      \"platform\": \"web\"\n    },\n    \"type\": \"properties\"\n  }\n}"
+							"raw": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{propName}} {{PROPERTY_UID}}\",\n      \"domains\": [\n        \"example.com\"\n      ],\n      \"platform\": \"web\"\n    },\n    \"type\": \"properties\"\n  }\n}"
 						},
 						"url": {
 							"raw": "{{HOST}}/companies/{{companyID}}/properties",
@@ -333,7 +346,7 @@
 									"",
 									"pm.collectionVariables.set(evKey, evValue);",
 									"",
-									"pm.test(\"Status code is 201\", function () {",
+									"pm.test(\"Host Created\", function () {",
 									"  pm.response.to.have.status(201);",
 									"  pm.expect(evValue).to.be.not.empty;",
 									"});"
@@ -407,7 +420,7 @@
 									"",
 									"pm.collectionVariables.set(evKey, evValue);",
 									"",
-									"pm.test(\"Status code is 201\", function () {",
+									"pm.test(\"Dev Environment Created\", function () {",
 									"  pm.response.to.have.status(201);",
 									"  pm.expect(evValue).to.be.not.empty;",
 									"});"
@@ -464,6 +477,80 @@
 					"response": []
 				},
 				{
+					"name": "Create Stage Environment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var resp = JSON.parse(responseBody);",
+									"",
+									"//evKey and evValue are the only values that should be changed in this script. Everything else is boilerplate.",
+									"var environment = \"Stage\"",
+									"var evKey = \"envID_\"+environment;",
+									"var evValue = resp.data.id;",
+									"var scriptCode = '<script src=\"'+resp.data.meta.script_sources[0].minified+'\" async></script>';",
+									"pm.collectionVariables.set(\"env\"+environment+\"_script\", scriptCode);   ",
+									"",
+									"pm.collectionVariables.set(evKey, evValue);",
+									"",
+									"pm.test(\"Stage Environment Stage\", function () {",
+									"  pm.response.to.have.status(201);",
+									"  pm.expect(evValue).to.be.not.empty;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Gw-Ims-Org-Id",
+								"value": "{{ORG_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json;revision=1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"Staging\",\n      \"stage\": \"staging\"\n    },\n    \"relationships\": {\n      \"host\": {\n        \"data\": {\n          \"id\": \"{{hostID}}\",\n          \"type\": \"hosts\"\n        }\n      }\n    },\n    \"type\": \"environments\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{HOST}}/properties/{{propID}}/environments",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"properties",
+								"{{propID}}",
+								"environments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create Prod Environment",
 					"event": [
 						{
@@ -481,7 +568,7 @@
 									"",
 									"pm.collectionVariables.set(evKey, evValue);",
 									"",
-									"pm.test(\"Status code is 201\", function () {",
+									"pm.test(\"Prod Environment Created\", function () {",
 									"  pm.response.to.have.status(201);",
 									"  pm.expect(evValue).to.be.not.empty;",
 									"});"
@@ -536,6 +623,26 @@
 						}
 					},
 					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.variables.set(\"propName\",\"AEM and Adobe Target tutorial\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
@@ -1482,7 +1589,7 @@
 			]
 		},
 		{
-			"name": "Publish Library",
+			"name": "Publish Library (READONLY)",
 			"item": [
 				{
 					"name": "Create Library",
@@ -2083,6 +2190,14 @@
 		},
 		{
 			"key": "dataElementName_pagetitle",
+			"value": ""
+		},
+		{
+			"key": "envStage_script",
+			"value": ""
+		},
+		{
+			"key": "envID_Stage",
 			"value": ""
 		}
 	]
