@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-- [Example launch API for target tutorial](#example-launch-api-for-target-tutorial)
+- [Tag property for Target tutorial using APIs](#tag-property-for-target-tutorial-using-apis)
   - [Prerequisites](#prerequisites)
   - [How to use](#how-to-use)
 
@@ -27,7 +27,7 @@ Along with the completed API collection, you can checkout  [requests-and-tips.md
 
 1. [Import](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) into Postman:
    1. postman_environment.json. If you don't have this file created, see the prerequisites.
-   2. [example-launch-api-for-target-tutorial.postman_collection.json](example-launch-api-for-target-tutorial.postman_collection.json)
+   2. [Tag property for Target tutorial using APIs.postman_collection.json](Tag property for Target tutorial using APIs.postman_collection.json)
    3. [Run](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/) the imported collection
 2. If you would like to complete the entire usecase from the [Experience League tutorial]( https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/target/overview.html?lang=en) you will need to use the tutorial to:
    1. Create an AEM author/publish environment with the [WKND project](https://github.com/adobe/aem-guides-wknd) installed
