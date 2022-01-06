@@ -4,6 +4,7 @@ The collection [Tag property for Target tutorial using APIs.postman_collection.j
 - [Launch API requests used and tips for use](#launch-api-requests-used-and-tips-for-use)
 - [Header Variables](#header-variables)
   - [Collection Variables](#collection-variables)
+- [Folders in the Postman Collection](#folders-in-the-postman-collection)
   - [Adobe IO Token](#adobe-io-token)
   - [Create Property](#create-property)
     - [Properties](#properties)
@@ -45,6 +46,7 @@ for (var key in varObject){
 	console.log(varObject[key]);
 }
 ```
+# Folders in the Postman Collection
 
 ## Adobe IO Token
 
