@@ -3,6 +3,7 @@
 **Contents**
 
 - [Tag property for Target tutorial using APIs](#tag-property-for-target-tutorial-using-apis)
+  - [Helpful resources](#helpful-resources)
   - [Prerequisites](#prerequisites)
   - [How to use](#how-to-use)
 
@@ -13,9 +14,10 @@ This is an postman project to build the tag property created in [Adobe Experienc
 
 > Note: Adobe Experience Platform **Launch** has been rebranded to Adobe Experience Platform **Tags**. These terms may be used interchangably throughout this documentation.
 
-Along with the completed API collection, you can checkout  [requests-and-tips.md](requests-and-tips.md) to learn more about each of the requests and their caveats.
-
-
+## Helpful resources
+ * Checkout [requests-and-tips.md](requests-and-tips.md) to learn more about each of the requests and their caveats.
+ * Use the [Helper Requests.postman_collection.json](Helper%20Requests.postman_collection.json) to run GET requests to list properties, data elements, rules, extensions, and more.
+ * [Reactor (Tags) API](https://developer.adobelaunch.com/api/) reference
 
 ## Prerequisites
 
@@ -27,7 +29,7 @@ Along with the completed API collection, you can checkout  [requests-and-tips.md
 
 1. [Import](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) into Postman:
    1. postman_environment.json. If you don't have this file created, see the prerequisites.
-   2. [Tag property for Target tutorial using APIs.postman_collection.json](Tag property for Target tutorial using APIs.postman_collection.json)
+   2. [Tag property for Target tutorial using APIs.postman_collection.json](Tag%20property%20for%20Target%20tutorial%20using%20APIs.postman_collection.json)
    3. [Run](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/) the imported collection
 2. If you would like to complete the entire usecase from the [Experience League tutorial]( https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/target/overview.html?lang=en) you will need to use the tutorial to:
    1. Create an AEM author/publish environment with the [WKND project](https://github.com/adobe/aem-guides-wknd) installed
