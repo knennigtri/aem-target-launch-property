@@ -1,12 +1,22 @@
 # Launch API requests used and tips for use
 
 The collection [Tag property for Target tutorial using APIs.postman_collection.json](Tag property for Target tutorial using APIs.postman_collection.json) is made up of 6 groupings of requests. Each collection folder represents a grouping of typical actions that might need to be performed when creating different items within a tag property. These groupings include:
-- [Adobe IO Token](#adobe-io-token)
-- [Create Property](#create-property)
-- [Add Extensions](#add-extensions)
-- [Add Elements](#add-elements)
-- [Add Rule - Target](#add-rule---target)
-- [Publish Library](#publish-library)
+- [Launch API requests used and tips for use](#launch-api-requests-used-and-tips-for-use)
+- [Header Variables](#header-variables)
+  - [Collection Variables](#collection-variables)
+  - [Adobe IO Token](#adobe-io-token)
+  - [Create Property](#create-property)
+    - [Properties](#properties)
+    - [Host](#host)
+    - [Environments](#environments)
+  - [Add Extensions](#add-extensions)
+    - [Extension Packages](#extension-packages)
+    - [Extensions](#extensions)
+  - [Add Data Elements](#add-data-elements)
+    - [Escaping custom scripts](#escaping-custom-scripts)
+  - [Add Rule - Target](#add-rule---target)
+    - [Rule Components](#rule-components)
+  - [Publish Library](#publish-library)
 
 # Header Variables
 
@@ -62,35 +72,30 @@ POST {{HOST}}/companies/{{companyID}}/properties
 
 **Sample Body**: See the [Properties API](https://developer.adobelaunch.com/api/reference/1.0/properties/create/)
 
-If you would like the tag to have a specific name, you will need to update the `body` in the **Create/Save property**:
+If you would like the tag to have a specific name, you will need to update the `propName` variable. This is set on the **Create Property (READONLY)** folder in the **pre-request Script**:
 
-``` JSON
+``` javascript
+pm.variables.set("propName","AEM and Adobe Target tutorial");
+```
+
+This variable is then used in the `body` of the **Create/Save Property** Post request:
+
+``` html
 {
-
   "data": {
-
     "attributes": {
-
-      "name": "Launch with Target *{{PROPERTY_COUNT}}*",
-
+      "name": "{{propName}} {{PROPERTY_UID}}",
       "domains": [
-
         "example.com"
-
       ],
-
       "platform": "web"
-
     },
-
     "type": "properties"
-
   }
-
 }
 ```
 
-> Note: {{PROPERTY_COUNT}} is  a simple counter to force a creation of a new property each time this request is run. See the  **pre-request Script** to see how it's implemented.
+> Note: {{PROPERTY_COUNT}} is  a simple counter to force a creation of a new property each time this request is run. See the  **Create/Save Property pre-request Script** to see how it's implemented.
 
 ### Host
 
