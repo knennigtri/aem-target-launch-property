@@ -12,6 +12,8 @@
 # Tag property for Target tutorial using APIs
 This is an postman project to build the tag property created in [Adobe Experience League Target tutorial](https://experienceleague.adobe.com/docs/experience-manager-learn/sites/integrations/target/overview.html?lang=en) using the Launch API. This automates the creation of the final launch property for adding target onto an AEM website. 
 
+> This process has been reimaged as a generic import/export process for any launch property and **this project will no longer be updated.** The new import/export tool can be found in the [launch-api-automations](https://github.com/knennigtri/launch-api-automation) project. This git project can still be used as a POC for creating various requests using the Launch API.
+
 > Note: Adobe Experience Platform **Launch** has been rebranded to Adobe Experience Platform **Tags**. These terms may be used interchangably throughout this documentation.
 
 ## Helpful resources
